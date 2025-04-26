@@ -168,26 +168,42 @@ body {
 }
 
 
-/* Responsive */
-@media ( max-width : 600px) {
-	.profile-container {
-		flex-direction: column;
-		align-items: center;
-	}
-	.profile-photo img {
-		width: 120px;
-		height: 120px;
-	}
-	.profile-info {
-		text-align: center;
-	}
-	.profile-info h1 {
-		font-size: 24px;
-	}
-	.profile-info p {
-		font-size: 14px;
-	}
+@media (max-width: 480px) {
+  .profile-container {
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+  }
+
+  .profile-photo img {
+    width: 100px;
+    height: 100px;
+  }
+
+  .profile-info {
+    text-align: center;
+    padding: 10px;
+  }
+
+  .profile-info h1 {
+    font-size: 20px;
+  }
+
+  .profile-info p {
+    font-size: 12px;
+  }
+
+  .social-media a {
+    width: 35px;
+    height: 35px;
+    font-size: 14px;
+  }
+
+  .links a {
+    font-size: 12px;
+  }
 }
+
 </style>
 </head>
 
