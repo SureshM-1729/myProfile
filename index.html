@@ -1,271 +1,253 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Suresh Myathari | Software Developer</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Suresh Myathari | Software Developer</title>
 
-  <link rel="icon" type="image/x-icon" href="assets/favicon/sureshPhoto.ico">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Outfit:wght@400;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 
-  <!-- Fonts and Icons -->
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
-  <link href="https://fonts.googleapis.com/css?family=Yesteryear" rel="stylesheet" />
+<style>
+:root {
+    --bg: #ffffff;
+    --text-primary: #111827;
+    --text-secondary: #4b5563;
+    --accent: #2563eb;
+    --card-bg: rgba(255, 255, 255, 0.8);
+    --card-border: #e5e7eb;
+    --glass-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.07);
+}
 
-  <style>
-    /* Base Styles */
-    body {
-      font-family: 'Inter', system-ui, sans-serif;
-      background-color: #f9fafb;
-      color: #1f2937;
-      margin: 0;
-      padding: 20px;
-      transition: background-color 0.3s ease, color 0.3s ease;
-    }
+html.dark-mode {
+    --bg: #030712;
+    --text-primary: #f9fafb;
+    --text-secondary: #9ca3af;
+    --accent: #60a5fa;
+    --card-bg: rgba(17, 24, 39, 0.7);
+    --card-border: #374151;
+    --glass-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.4);
+}
 
-    html.dark-mode body {
-      background-color: #1f2937;
-      color: #f9fafb;
-    }
+body {
+    font-family: 'Inter', sans-serif;
+    background-color: var(--bg);
+    color: var(--text-primary);
+    margin: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    transition: background 0.4s ease;
+}
 
-    /* Container */
-    .profile-container {
-      max-width: 800px;
-      margin: 60px auto;
-      background: #ffffff;
-      padding: 40px;
-      border-radius: 12px;
-      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.05);
-      display: flex;
-      flex-wrap: wrap;
-      align-items: center;
-      gap: 30px;
-      transition: background-color 0.3s ease;
-    }
+.main-wrapper {
+    max-width: 800px;
+    width: 90%;
+    margin: 40px auto;
+    text-align: center;
+}
 
-    html.dark-mode .profile-container {
-      background: #2d3748;
-    }
+.profile-img-container img {
+    width: 140px;
+    height: 140px;
+    border-radius: 50%; /* Circular shape */
+    object-fit: cover;
+    border: 2px solid var(--card-border);
+    box-shadow: var(--glass-shadow);
+    margin-bottom: 1rem;
+}
 
-    /* Profile Image */
-    .profile-photo {
-      flex-shrink: 0;
-      text-align: center;
-    }
+h1 {
+    font-family: 'Outfit', sans-serif;
+    font-size: 2.5rem;
+    margin: 0;
+    letter-spacing: -0.02em;
+}
 
-    .profile-photo img {
-      width: 160px;
-      height: 160px;
-      object-fit: cover;
-      border-radius: 50%;
-      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-      margin-bottom: -20px;
-    }
+.badge {
+    display: inline-block;
+    background: var(--accent);
+    color: white;
+    padding: 5px 14px;
+    border-radius: 20px;
+    font-size: 0.8rem;
+    font-weight: 600;
+    margin-top: 10px;
+}
 
-    /* Profile Info */
-    .profile-info {
-      flex: 1;
-      min-width: 250px;
-    }
+.intro-text {
+    max-width: 580px;
+    margin: 1.5rem auto 0;
+    line-height: 1.6;
+    color: var(--text-secondary);
+    font-size: 1rem;
+}
 
-    .profile-info h1 {
-      margin: 0 0 10px;
-      font-size: 28px;
-      color: #1a202c;
-      font-family: 'Yesteryear', sans-serif;
-      transition: color 0.3s ease;
-    }
+.intro-text .highlight {
+    color: var(--accent);
+    font-weight: 600;
+}
 
-    html.dark-mode .profile-info h1,
-    html.dark-mode .profile-info p {
-      color: #ffffff;
-    }
+.grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 1.2rem;
+    margin-top: 2rem;
+}
 
-    .profile-info p {
-      margin: 0 0 20px;
-      font-size: 16px;
-      line-height: 1.6;
-      color: #4a5568;
-      transition: color 0.3s ease;
-    }
+.card {
+    background: var(--card-bg);
+    border: 1px solid var(--card-border);
+    border-radius: 20px;
+    padding: 1.5rem;
+    text-decoration: none;
+    color: inherit;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    transition: transform 0.3s ease, border-color 0.3s ease;
+    box-shadow: var(--glass-shadow);
+}
 
-    .emoji {
-      cursor: pointer;
-      transition: transform 0.2s ease;
-    }
+.card:hover {
+    transform: translateY(-4px);
+    border-color: var(--accent);
+}
 
-    .emoji:hover {
-      transform: scale(1.2);
-    }
+.card-icon {
+    background: var(--accent);
+    color: #fff;
+    width: 45px;
+    height: 45px;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.1rem;
+    flex-shrink: 0;
+}
 
-    /* Links */
-    .links {
-      display: flex;
-      flex-direction: column;
-      gap: 12px;
-      margin-bottom: 20px;
-    }
+.card-text h3 {
+    margin: 0;
+    font-size: 1.1rem;
+}
 
-    .links a {
-      text-decoration: none;
-      padding: 10px 20px;
-      background-color: #f3f4f6;
-      color: #1a202c;
-      border-radius: 30px;
-      font-size: 14px;
-      font-weight: 600;
-      border: 1px solid #d1d5db;
-      transition: all 0.3s ease;
-      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.03);
-      width: 100%;
-      box-sizing: border-box;
-    }
+.card-text p {
+    margin: 4px 0 0;
+    font-size: 0.85rem;
+    color: var(--text-secondary);
+}
 
-    .links a:hover {
-      background-color: #e5e7eb;
-      border-color: #cbd5e1;
-      color: #111827;
-      transform: translateY(-1px);
-    }
+.social-media {
+    display: flex;
+    justify-content: center;
+    gap: 16px;
+    margin-top: 3rem;
+    flex-wrap: wrap;
+}
 
-    /* Social Media Icons */
-    .social-media {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 10px;
-      margin-bottom: 20px;
-      margin-left: 20px;
-    }
+.social-media a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    padding: 10px 16px;
+    background: var(--card-bg);
+    border: 1px solid var(--card-border);
+    border-radius: 12px;
+    color: var(--text-primary);
+    font-weight: 500;
+    font-size: 0.9rem;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    box-shadow: var(--glass-shadow);
+}
 
-    .social-media a {
-      width: 40px;
-      height: 40px;
-      color: #ffffff;
-      border-radius: 50%;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      text-decoration: none;
-      transition: background-color 0.3s ease;
-    }
+.social-media a i {
+    font-size: 1.2rem;
+}
 
-    .social-media a i {
-      font-size: 18px;
-    }
+.social-media a:hover {
+    transform: translateY(-3px);
+    border-color: var(--accent);
+    color: var(--accent);
+    box-shadow: 0 6px 18px rgba(37, 99, 235, 0.15);
+}
 
-    .social-media a.instagram {
-      background-color: #E1306C;
-    }
+.theme-btn {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    background: var(--card-bg);
+    border: 1px solid var(--card-border);
+    border-radius: 10px;
+    cursor: pointer;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1000;
+}
 
-    .social-media a.instagram:hover {
-      background-color: #c42b5f;
-    }
-
-    .social-media a.linkedin {
-      background-color: #0077B5;
-    }
-
-    .social-media a.linkedin:hover {
-      background-color: #005f8d;
-    }
-
-    .social-media a.email {
-      background-color: #6b7280;
-    }
-
-    .social-media a.email:hover {
-      background-color: #4b5563;
-    }
-
-    .social-media a.x {
-      background-color: #000000;
-    }
-
-    .social-media a.x:hover {
-      background-color: #333333;
-    }
-
-    .social-media a.github {
-      background-color: #333333;
-    }
-
-    .social-media a.github:hover {
-      background-color: #24292e;
-    }
-
-    @media (max-width: 720px) {
-      .profile-container {
-        flex-direction: column;
-        align-items: center;
-        padding: 20px;
-      }
-
-      .profile-photo img {
-        width: 100px;
-        height: 100px;
-      }
-
-      .profile-info {
-        text-align: center;
-        padding: 10px;
-      }
-
-      .profile-info h1 {
-        font-size: 20px;
-      }
-
-      .profile-info p {
-        font-size: 12px;
-      }
-
-      .social-media a {
-        width: 35px;
-        height: 35px;
-        font-size: 14px;
-      }
-
-      .links a {
-        font-size: 12px;
-      }
-    }
-  </style>
+@media (max-width: 640px) {
+    h1 { font-size: 2rem; }
+    .grid { grid-template-columns: 1fr; }
+}
+</style>
 </head>
-
 <body>
-  <div class="profile-container">
-    <!-- Profile Photo -->
-    <div class="profile-photo">
-      <img src="assets/images/sureshPhoto.jpg" alt="Profile Photo" />
+
+<button class="theme-btn" id="themeToggle" aria-label="Toggle Dark Mode">
+    <i class="fas fa-moon" id="themeIcon"></i>
+</button>
+
+<div class="main-wrapper">
+    <section class="hero">
+        <div class="profile-img-container">
+            <img src="assets/images/sureshPhoto.jpg" alt="Suresh Myathari">
+        </div>
+        <h1>Suresh Myathari</h1>
+        <div class="badge">Software Developer</div>
+        <div class="intro-text">
+            Welcome! Explore my <span class="highlight">projects</span> below.
+        </div>
+    </section>
+
+    <div class="grid">
+        <a href="https://sureshm-1729.github.io/careerNavigation/" class="card" target="_blank">
+            <div class="card-icon"><i class="fas fa-graduation-cap"></i></div>
+            <div class="card-text">
+                <h3>Career Navigation</h3>
+                <p>Strategic roadmaps for choosing your path in higher education.</p>
+            </div>
+        </a>
+        <a href="https://syntax-circuit.github.io/app/index.html" class="card" target="_blank">
+            <div class="card-icon"><i class="fas fa-university"></i></div>
+            <div class="card-text">
+                <h3>Syntax Circuit</h3>
+                <p>Professional IT coaching and computer science academic tuitions.</p>
+            </div>
+        </a>
     </div>
 
-    <!-- Profile Info -->
-    <div class="profile-info">
-      <h1>
-        Suresh Myathari <span class="emoji" id="themeToggle" title="Toggle Dark Mode">❤️</span>
-      </h1>
-      <p>Software Developer | Tech Enthusiast</p>
+    <nav class="social-media">
+        <a href="https://github.com/SureshM-1729" target="_blank"><i class="fab fa-github"></i> GitHub</a>
+        <a href="https://www.linkedin.com/in/suresh-myathari" target="_blank"><i class="fab fa-linkedin-in"></i> LinkedIn</a>
+        <a href="mailto:sureshswaero1729@gmail.com"><i class="fas fa-envelope"></i> Email</a>
+    </nav>
+</div>
 
-      <!-- Social Media Icons -->
-      <div class="social-media">
-        <a href="https://twitter.com/@SURESH_M1729" class="x" target="_blank"><i class="fab fa-x-twitter"></i></a>
-        <a href="https://www.instagram.com/soori._.bellam" class="instagram" target="_blank"><i class="fab fa-instagram"></i></a>
-        <a href="mailto:sureshswaero1729@email.com" class="email" target="_blank"><i class="fas fa-envelope"></i></a>
-        <a href="https://www.linkedin.com/in/suresh-myathari" class="linkedin" target="_blank"><i class="fab fa-linkedin-in"></i></a>
-        <a href="https://github.com/SureshM-1729" class="github" target="_blank"><i class="fab fa-github"></i></a>
-      </div>
+<script>
+const btn = document.getElementById('themeToggle');
+const icon = document.getElementById('themeIcon');
 
-      <!-- Primary Links -->
-      <div class="links">
-        <a href="https://sureshm-1729.github.io/careerNavigation/" target="_blank">Career-Navigation</a>
-        <a href="https://syntax-circuit.github.io/app/index.html" target="_blank">Syntax-Circuit</a>
-      </div>
-    </div>
-  </div>
+btn.addEventListener('click', () => {
+    document.documentElement.classList.toggle('dark-mode');
+    icon.className = document.documentElement.classList.contains('dark-mode') ? 'fas fa-sun' : 'fas fa-moon';
+});
+</script>
 
-  <script>
-    document.getElementById('themeToggle').addEventListener('click', () => {
-      document.documentElement.classList.toggle('dark-mode');
-    });
-  </script>
 </body>
 </html>
